@@ -43,8 +43,8 @@ function enterSite() {
   function createMeteor() {
     // const size = Math.random() * 2 + 1;
     return {
-      x: Math.random() * canvas.width,
-      y: -20,
+      x: Math.random() * canvas.width * 2 - canvas.width,
+      y: 10,
       length: Math.random() * 80 + 40,
       speed: Math.random() * 5 + 1,
       // 角度:45
@@ -59,7 +59,8 @@ function enterSite() {
   function drawMeteor(m) {
     const xEnd = m.x + m.length * Math.cos(m.angle);
     const yEnd = m.y + m.length * Math.sin(m.angle);
-    const gradient = ctx.createLinearGradient(m.x, m.y, xEnd, yEnd);
+    const gradient = ctx.createLinearGradient(xEnd, yEnd, m.x, m.y);
+    // const gradient = ctx.createLinearGradient(m.x, m.y,xEnd, yEnd);
     gradient.addColorStop(0, `rgba(255,255,255,${m.alpha})`);
     gradient.addColorStop(1, 'rgba(255,255,255,0)');
     ctx.beginPath();
@@ -73,8 +74,8 @@ function enterSite() {
   function update() {
     // クリア
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // 頻繫にでないようにいったん8設定
-    if (meteors.length < 8 && Math.random() < 0.2) {
+    // 流星数、頻度
+    if (meteors.length < 14 && Math.random() < 0.3) {
       meteors.push(createMeteor());
     }
     meteors = meteors.filter(m => m.y < canvas.height);
@@ -95,7 +96,7 @@ function enterSite() {
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 document.addEventListener('keydown', function (event) {
-  if (  
+  if (
     event.key === 'F12' ||
     (event.ctrlKey && event.shiftKey && event.key === 'I') ||
     (event.ctrlKey && event.key === 'U')
