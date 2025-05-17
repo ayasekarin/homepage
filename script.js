@@ -16,10 +16,9 @@ function enterSite() {
 
   window.scrollTo(0, 0);
 
-  // AOSをここで初期化
   setTimeout(() => {
     AOS.init({
-      once: true, 
+      once: false, 
     });
   }, 100);
 

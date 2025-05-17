@@ -5,6 +5,7 @@ html {
   font-family: "Noto Sans JP", sans-serif;
   color: #fff;
   background: #000;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -409,7 +410,7 @@ footer {
   padding: 0;
   z-index: 10;
   letter-spacing: 0.05em;
-  font-family: helvetica-w01-light,sans-serif;
+  font-family: helvetica-w01-light, sans-serif;
 }
 
 .desktop-nav ul li a {
@@ -441,4 +442,40 @@ footer {
   .navbar {
     display: block !important;
   }
+}
+
+.about-message {
+  max-width: 800px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: left;
+  color: #f9f9f9;
+}
+
+.experience-container {
+  max-width: 800px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.experience-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.experience-list>li {
+  margin-bottom: 20px;
+}
+
+.experience-list ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+}
+.about-message p span {
+  color: #00ffdc;
 }
