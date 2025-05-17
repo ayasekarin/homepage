@@ -15,7 +15,7 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: kenburns 15s infinite alternate;
+  /* animation: kenburns 45s infinite alternate; */
   top: 0;
   left: 0;
   width: 100%;
@@ -272,12 +272,12 @@ footer {
   top: 20px;
   left: 20px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.1); /* 半透明白色 */
-  backdrop-filter: blur(10px); /* 背景模糊 */
-  -webkit-backdrop-filter: blur(10px); /* 兼容Safari */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 1px 8px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3); /* 微弱边框 */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   transition: all 0.3s ease;
 }
@@ -293,7 +293,8 @@ footer {
   list-style: none;
   padding: 0;
   margin: 10px 0 0;
-  background: rgba(255, 255, 255, 0.15); /* 半透明淡白色 */
+  background: rgba(255, 255, 255, 0.15);
+  /* 半透明淡白色 */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -335,7 +336,8 @@ footer {
 }
 
 .dropdown li a:hover {
-  background: rgba(255, 255, 255, 0.2); /* hover时浅色背景 */
+  background: rgba(255, 255, 255, 0.2);
+  /* hover时浅色背景 */
   border-radius: 8px;
 }
 
@@ -374,7 +376,7 @@ footer {
   border: 1px solid white;
   border-radius: 8px;
   cursor: pointer;
-  display: none; /* 最初不显示 */
+  display: none;
   z-index: 10000;
   transition: all 0.3s ease;
 }
@@ -388,10 +390,61 @@ footer {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1.15);
+  }
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 96px;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  letter-spacing: 0.05em;
+  font-family: helvetica-w01-light,sans-serif;
+}
+
+.desktop-nav ul li a {
+  color: #878c8c;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.desktop-nav ul li a:hover {
+  color: #ccc;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: block;
+  }
+
+  .navbar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .navbar {
+    display: block !important;
   }
 }
