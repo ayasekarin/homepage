@@ -6,6 +6,10 @@ html {
   color: #fff;
   background: #000;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .hero {
@@ -476,6 +480,7 @@ footer {
   list-style-type: disc;
   margin-left: 1.5em;
 }
+
 .about-message p span {
   color: #00ffdc;
 }
@@ -489,4 +494,3 @@ footer {
   pointer-events: none;
   z-index: 1000 !important;
 }
-
