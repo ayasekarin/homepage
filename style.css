@@ -59,10 +59,13 @@ html {
   z-index: 2;
 }
 
-.content h1 {
-  font-size: 4rem;
+.content h1,
+.content span {
+  font-size: 3.4rem;
   font-weight: bold;
-  margin: 0;
+  margin: auto;
+  text-shadow: 6px 6px 8px rgb(246 246 246 / 70%);
+  /* -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5); */
 }
 
 .content p {
@@ -71,11 +74,12 @@ html {
 }
 
 .scroll-btn {
-  margin-top: 20px;
+  margin-top: 100px;
   display: inline-block;
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
   text-decoration: none;
+  -webkit-text-stroke: 2px rgba(237, 220, 255, 0.5);
 }
 
 .section {
@@ -207,10 +211,6 @@ footer {
   font-size: 1rem;
 }
 
-/* .project-table tbody tr:nth-child(odd) {
-  background: #fafafa;
-} */
-
 .skills-container {
   display: flex;
   flex-direction: column;
@@ -231,7 +231,6 @@ footer {
   padding: 0;
   margin: 0;
   font-size: 1.1rem;
-  /* color: #333; */
   text-align: left;
 }
 
@@ -239,7 +238,6 @@ footer {
   margin: 10px 0;
 }
 
-/* 横向布局 for PC */
 @media (min-width: 768px) {
   .skills-container {
     flex-direction: row;
@@ -266,7 +264,6 @@ footer {
   size: 4rem;
 }
 
-/* ナビゲーションバー */
 .navbar {
   position: fixed;
   top: 20px;
@@ -294,7 +291,6 @@ footer {
   padding: 0;
   margin: 10px 0 0;
   background: rgba(255, 255, 255, 0.15);
-  /* 半透明淡白色 */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -310,7 +306,6 @@ footer {
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
-/* 悬停时，平滑显示 */
 .menu:hover .dropdown,
 .dropdown:hover {
   opacity: 1;
@@ -337,7 +332,6 @@ footer {
 
 .dropdown li a:hover {
   background: rgba(255, 255, 255, 0.2);
-  /* hover时浅色背景 */
   border-radius: 8px;
 }
 
